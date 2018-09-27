@@ -1,5 +1,5 @@
-# 起 POA 节点的 docker 文件
-目前实现了 bootnode
+# Docker file to start POA node
+Bootnode:
 ```bash
 docker-compose up --build
 ```
