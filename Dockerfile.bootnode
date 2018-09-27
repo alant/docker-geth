@@ -1,0 +1,12 @@
+FROM ubuntu:xenial
+
+RUN sudo apt-get install software-properties-common \
+    && sudo add-apt-repository -y ppa:ethereum/ethereum \
+    && sudo apt-get update \
+    && sudo apt-get install ethereum
+    && mkdir -p /home/ubuntu/sunnynet_node
+
+WORKDIR "/home/ubuntu/sunnynet_node"
+
+ENV nodekeyhex="84ba012c18d64c6b128e0d4052f2e444ca9cf7068f4938adc4fdaadb367449fade42a7546247faa45069bdef7428d4c46e2ee7d71840e15e7d478aeaa21395c4"
+CMD exec ./bootnode -nodekeyhex $nodekeyhex
